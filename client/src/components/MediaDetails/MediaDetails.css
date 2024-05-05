@@ -1,0 +1,32 @@
+  .md-container {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("https://images.hdqwalls.com/download/nasa-logo-minimal-ej-1400x900.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  .md-row {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .md-desc .md-media {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .md-description {
+    text-align: justify;
+  }
+
+  .md-keywords {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: cyan;
+  }
+
+
+  
