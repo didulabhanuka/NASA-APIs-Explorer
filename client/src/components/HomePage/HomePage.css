@@ -1,32 +1,53 @@
-
-
 .image-container {
   position: relative;
   width: 100%;
   height: 400px; /* adjust height as needed */
   overflow: hidden; /* Ensure button doesn't overflow */
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .image-container h2 {
   color: white;
+  margin: 10px; /* Default margin */
+  font-size: 2rem; /* Default font size */
 }
 
 .image-container p {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: left;
+  margin: 10px;
+  text-align: justify;
+  max-width: 50vw;
+  padding-top: 50px;
 }
 
-.image-container button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+.image-container .btn {
+  margin: 10px;
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .image-container h2 {
+    margin: 5px; /* Reduced margin for smaller screens */
+    font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .image-container p {
+    max-width: 70vw;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container h2 {
+    margin: 2px; /* Even smaller margin for mobile screens */
+
+    font-size: 1.2rem; /* Smaller font size for mobile screens */
+  }
+
+  .image-container p {
+    max-width: 90vw;
+    font-size: 0.8rem;
+    padding-top: 40px;
+  }
 }

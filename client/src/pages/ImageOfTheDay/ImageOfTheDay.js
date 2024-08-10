@@ -61,12 +61,19 @@ function ImageOfTheDay() {
 
     if (!photoData) return null;
 
+    function truncateUrl(url, maxLength = 30) {
+        if (url.length > maxLength) {
+            return url.slice(0, maxLength) + '...';
+        }
+        return url;
+    }
+
     return (
-        <div className="container-fluid text-white">
+        <div className="container text-white apod-maincontainer">
             {/* Image of the day */}
-            <div className="row p-5 apod-maindiv">
-                <h2 >Image of the day</h2>
-                <div className="col-md-6 p-5 d-flex apod-img">
+            <div className="row apod-maindiv">
+                <h2>Image of the day</h2>
+                <div className="col-md-6 d-flex apod-img">
                     {photoData.media_type === "image" ? (
                         <img src={photoData.url} alt={photoData.title} className="img-fluid"/>
                     ) : (
@@ -81,27 +88,31 @@ function ImageOfTheDay() {
                         />
                     )}
                 </div>
-                <div className="col-md-6 p-5 apod-desc">
+                <div className="col-md-6 apod-desc">
                     <h1>{photoData.title}</h1>
                     <p className="date">{photoData.date}</p>
-                    <p className="apod-explanation" >{photoData.explanation}</p>
+                    <p className="apod-explanation">{photoData.explanation}</p>
                     <p className="copyright">&copy; {photoData.copyright}</p>
                     {photoData.media_type === "image" ? (
-                        <p><u>View Full Image</u>: <a href={photoData.hdurl} target="_blank" rel="noopener noreferrer">{photoData.hdurl}</a></p>
-                        ) : (
-                         <p><u>View Full Video</u>: <a href={photoData.url} target="_blank" rel="noopener noreferrer">{photoData.url}</a></p>
-                        )}
+                        <p className="link">
+                            View Full Image: <a href={photoData.hdurl} target="_blank" rel="noopener noreferrer">{truncateUrl(photoData.hdurl)}</a>
+                        </p>
+                    ) : (
+                        <p className="link">
+                            View Full Video: <a href={photoData.url} target="_blank" rel="noopener noreferrer">{photoData.url}</a>
+                        </p>
+                    )}
                 </div>
             </div>
             
             {/* More */}
-            <div className="row p-5 apod-morediv">
-                <h2 style={{}}>Disocver what you missed</h2>
+            <div className="row apod-morediv">
+                <h2>Discover what you missed</h2>
                 <Slider {...settings}>
                     {previousPhotos.map((photo, index) => (
                         <div className="col-md-12" key={index}>
                             <div className="row apod-morerow">
-                                <div className="col-md-6 p-5 d-flex apod-img">
+                                <div className="col-md-6 d-flex apod-img">
                                     {photo.media_type === "image" ? (
                                         <img src={photo.url} alt={photo.title} className="img-fluid"/>
                                     ) : (
@@ -116,15 +127,19 @@ function ImageOfTheDay() {
                                         />
                                     )}
                                 </div>
-                                <div className="col-md-6 p-5 apod-desc">
+                                <div className="col-md-6 apod-desc">
                                     <h2>{photo.title}</h2>
                                     <p className="date">{photo.date}</p>
                                     <p className="apod-explanation">{photo.explanation}</p>
                                     <p className="copyright">&copy; {photoData.copyright}</p>
                                     {photo.media_type === "image" ? (
-                                        <p><u>View Full Image</u>: <a href={photo.hdurl} target="_blank" rel="noopener noreferrer">{photo.hdurl}</a></p>
+                                        <p>
+                                            View Full Image: <a href={photo.hdurl} target="_blank" rel="noopener noreferrer">{truncateUrl(photo.hdurl)}</a>
+                                        </p>
                                     ) : (
-                                        <p><u>View Full Video</u>: <a href={photo.url} target="_blank" rel="noopener noreferrer">{photo.url}</a></p>
+                                        <p>
+                                            View Full Video: <a href={photo.url} target="_blank" rel="noopener noreferrer">{photo.url}</a>
+                                        </p>
                                     )}
                                 </div>
                             </div>
