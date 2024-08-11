@@ -66,10 +66,10 @@ const MarsRoverPage = () => {
   }, [rover]);
 
   return (
-    <div className="container-fluid text-white p-5 mars-container">
+    <div className="container-fluid text-white mars-container">
       <h1>Mars Rover Mission Information</h1>
       
-      <div className="row p-5 mars-row">
+      <div className="row mars-mainrow">
         <div className="col-md-6 p-5 mars-col">
           <label htmlFor="rover">Select Rover:</label>
           <select
@@ -100,7 +100,7 @@ const MarsRoverPage = () => {
         </div>
       </div>
 
-      <div className="row p-5 mars-row">
+      <div className="row mars-subrow">
         {rover === 'curiosity' && !loadingPhotos ? (
           Object.keys(photos).map(camera => (
             <div className='p-5' key={camera}>

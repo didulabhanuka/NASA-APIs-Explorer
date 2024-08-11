@@ -1,10 +1,10 @@
-.ml-ontainer {
-    background-image: url("https://images.hdqwalls.com/download/nasa-logo-minimal-ej-1400x900.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
+  .ml-container {
+      background-image: url("https://images.hdqwalls.com/download/nasa-logo-minimal-ej-1400x900.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
   
   .ml-searchform {
     height: 35px;
@@ -32,6 +32,17 @@
   }
   
   @media (max-width: 768px) {
+    .ml-mediaitem {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ml-container {
+      padding: 20px;
+    }
+
     .ml-mediaitem {
       flex: 50%;
       max-width: 50%;

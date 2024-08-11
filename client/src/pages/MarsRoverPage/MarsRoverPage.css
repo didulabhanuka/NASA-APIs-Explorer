@@ -5,10 +5,17 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    padding: 40px;
 }
 
-.mars-row {
+.mars-mainrow  {
     background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.mars-subrow  {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
 }
 
 .mars-col {
@@ -20,4 +27,34 @@
     max-width: 100%;
     height: 600px;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+    .mars-container {
+        padding: 20px;
+    }
+
+    .mars-mainrow {
+        overflow: hidden;
+    }
+
+    .mars-subrow  {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+    }
+
+    .mars-subrow  h3 {
+        font-size: 1rem;
+    }
+
+    .mars-carousel img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
 }

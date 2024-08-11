@@ -35,7 +35,7 @@ const MediaLibrary = () => {
   };
 
   return (
-    <div className="container-fluid ml-ontainer">
+    <div className="container-fluid ml-container">
       <div className="row">
         <div className="col-xl-3 p-4">
           <i className="bi bi-search search-icon"></i>
